@@ -1,0 +1,48 @@
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.menu-bar {
+  display: flex;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+.mib-view {
+  display: flex;
+  width: 275px;
+}
+.object-view {
+  display: flex;
+  flex-grow: 1;
+}
+.menu-bar-bg {
+  background: #525252;
+}
+.menu-bar-border {
+  border-bottom: 3px solid #43e243;
+}
+.mib-view-bg {
+  background: #e8e8e8;
+}
+.mib-view-border {
+  border-right: 3px solid #ffffff;
+}
+.object-view-bg {
+  background: #ffffff;
+}
+.menu {
+  display: flex;
+  margin-left: auto;
+}
+.menu-btn {
+  font-family: Arvo, serif;
+  color: #71ff71;
+  padding: 12px;
+}

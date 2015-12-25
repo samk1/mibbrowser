@@ -1,0 +1,66 @@
+@import 'style.less';
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.menu-bar {
+  display: flex;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.mib-view {
+  display: flex;
+  width: 275px;
+}
+
+.object-view {
+  display: flex;
+  flex-grow: 1;
+}
+
+.menu-bar-bg {
+  background: @menu-bg-color;
+}
+
+.menu-bar-border {
+  border-bottom: 3px solid @menu-border-color;
+}
+
+.mib-view-bg {
+  background: @mib-view-bg-color;
+}
+
+.mib-view-border {
+  border-right: 3px solid @mib-view-border-color;
+}
+
+.object-view-bg {
+  background: @object-view-bg-color;
+}
+
+.object-view-border {
+
+}
+
+.menu {
+  display: flex;
+  margin-left: auto;
+}
+
+.menu-btn {
+  font-family: @menu-btn-font;
+  color: @menu-btn-fg-color;
+  padding: 12px;
+}
