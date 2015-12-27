@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link href='https://fonts.googleapis.com/css?family=Arvo:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
   <style>
     [ng-cloak] {
       display: none;
@@ -44,12 +45,13 @@ return g})}})})(window)})(window);
       'app.js',
       'view1/view1.js',
       'view2/view2.js',
+      'components/smi/smi.js',
       'components/version/version.js',
       'components/version/version-directive.js',
       'components/version/interpolate-filter.js'
     ], function() {
       // when all is done, execute bootstrap angular application
-      angular.bootstrap(document, ['myApp']);
+      angular.bootstrap(document, ['mibBrowser']);
     });
   </script>
   <title>My AngularJS App</title>
@@ -65,8 +67,49 @@ return g})}})})(window)})(window);
     </div>
 
     <div class="main">
-        <div class="mib-view mib-view-bg mib-view-border">
+        <div class="modules-view modules-view-bg modules-view-border" ng-controller="moduleController">
+            <div class="user-module-list module-list">
+                <div class="header">
+                    <span class="expand-btn header-elm" ng-click="showUserModules = !showUserModules">
+                        <i class="fa fa-2x fa-fw fa-caret-right caret" ng-hide="showUserModules"></i>
+                        <i class="fa fa-2x fa-fw fa-caret-down caret" ng-hide="!showUserModules"></i>
+                    </span>
+                    <span class="text header-elm">User Modules</span>
+                    <span class="upload-btn header-elm" onclick="document.getElementById('upload_module').click()">
+                        <span>
+                            <input type="file" id="upload_module" style="display: none">
+                            <label for="upload_module">
+                                <i class="fa fa-upload upload-icon"></i>Upload
+                            </label>
+                        </span>
+                    </span>
+                </div>
+                <ul class="list" ng-hide="!showUserModules">
 
+                </ul>
+            </div>
+            <div class="ietf-module-list module-list">
+                <div class="header">
+                    <span class="expand-btn header-elm" ng-click="showIetfModules = !showIetfModules">
+                        <i class="fa fa-2x fa-fw fa-caret-right caret" ng-hide="showIetfModules"></i>
+                        <i class="fa fa-2x fa-fw fa-caret-down caret" ng-hide="!showIetfModules"></i>
+                    </span>
+                    <span class="text header-elm">IETF Modules</span>
+                </div>
+                <ul class="list" ng-hide="!showIetfModules">
+                    <li ng-repeat="module in ietfModules" ng-class-odd="'odd'">
+                        <span class="module-name">{{module.name}}</span>
+                        <span class="compile-btn" ng-click="loadModule(module)" ng-show="!module.compiled">
+                            <span>
+                                <i class="fa fa-plug plug-icon"></i>Compile
+                            </span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tree-view tree-view-bg tree-view-border" ng-controller="objectController">
+            <div mib-node-tree></div>
         </div>
         <div class="object-view object-view-bg object-view-border">
             <input type="file">

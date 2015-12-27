@@ -13,10 +13,17 @@ body {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+  overflow: hidden;
 }
-.mib-view {
+.modules-view {
   display: flex;
-  width: 275px;
+  flex-direction: column;
+  width: 25%;
+  overflow-y: auto;
+}
+.tree-view {
+  display: flex;
+  width: 25%;
 }
 .object-view {
   display: flex;
@@ -28,10 +35,10 @@ body {
 .menu-bar-border {
   border-bottom: 3px solid #43e243;
 }
-.mib-view-bg {
+.tree-view-bg {
   background: #e8e8e8;
 }
-.mib-view-border {
+.tree-view-border {
   border-right: 3px solid #ffffff;
 }
 .object-view-bg {
@@ -45,4 +52,102 @@ body {
   font-family: Arvo, serif;
   color: #71ff71;
   padding: 12px;
+}
+.module-list .header {
+  font-family: Arvo;
+  font-size: 15pt;
+  background-color: #69C769;
+  border-bottom: 3px solid black;
+  position: relative;
+}
+.module-list .list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.module-list {
+  width: 100%;
+}
+.module-list .header .caret {
+  /* padding-right: 12px; */
+  /* padding-left: 12px; */
+}
+
+.module-list .header {
+  display: flex;
+  flex-direction: row;
+}
+
+.module-list .header .header-elm {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.module-list .header .expand-btn :hover {
+  cursor: pointer;
+  background: #43e243;
+}
+
+.module-list .header .text {
+  padding-left: 10px;
+  margin-right: auto;
+}
+
+.module-list .header .upload-btn {
+  margin-left: auto;
+  font-family: sans-serif;
+  text-decoration: underline;
+  color: #000000;
+  font-size: 12pt;
+  height: 100%;
+}
+
+.upload-btn .upload-icon {
+  padding-right: 5px;
+}
+
+.upload-btn span {
+  padding: 9px 10px;
+}
+
+.upload-btn :hover {
+  background: #43e243;
+  cursor: pointer;
+}
+
+.module-list .list li.odd {
+  background-color: #F1F1F1;
+}
+
+.module-list .list li {
+  padding-left: 10px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.compile-btn {
+  margin-left: auto;
+  display: flex;
+  text-decoration: underline;
+}
+
+.compile-btn span {
+  padding: 5px 10px;
+}
+
+.module-list .list .module-name {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.compile-btn .plug-icon {
+  padding-right: 5px;
+}
+
+.compile-btn :hover {
+  background: #E8E8E8;
+  cursor: pointer;
 }

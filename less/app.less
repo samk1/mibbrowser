@@ -18,11 +18,19 @@ body {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+  overflow: hidden;
 }
 
-.mib-view {
+.modules-view {
   display: flex;
-  width: 275px;
+  flex-direction: column;
+  width: 25%;
+  overflow-y: auto;
+}
+
+.tree-view {
+  display: flex;
+  width: 25%;
 }
 
 .object-view {
@@ -38,12 +46,12 @@ body {
   border-bottom: 3px solid @menu-border-color;
 }
 
-.mib-view-bg {
-  background: @mib-view-bg-color;
+.tree-view-bg {
+  background: @tree-view-bg-color;
 }
 
-.mib-view-border {
-  border-right: 3px solid @mib-view-border-color;
+.tree-view-border {
+  border-right: 3px solid @tree-view-border-color;
 }
 
 .object-view-bg {
@@ -63,4 +71,34 @@ body {
   font-family: @menu-btn-font;
   color: @menu-btn-fg-color;
   padding: 12px;
+}
+
+.module-list .header {
+  font-family: Arvo;
+  font-size: 15pt;
+  background-color: #69C769;
+  border-bottom: 3px solid black;
+}
+
+.module-list .list {
+  list-style: none;
+}
+
+.module-list {
+  width:  100%;
+}
+
+.module-list .caret {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.module-list .header span {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.module-list .header .expand-btn :hover {
+  cursor: pointer;
+  background: @menu-border-color
 }
